@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="{% static 'cadastro.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>FitConnect: Cadastro</title>
+</head>
+<body>
+  <nav class="navbar sticky-top" id="barra">
+      <div class="container">
+      <a href="/"><img src="{% static 'imgs/fitlogoatualizado.png' %}" class="logotipo"></a>
+      <a href="cadastro" class="navbar-text" id="cadastro"></a>
+
+      </div>
+  </nav>
+  <form method="POST">
+    <div class= "formulario">
+        <h1>Cadastrar-se</h1>
+        {% csrf_token %}
+        {{ formulario.username.label_tag }}
+        {{ formulario.username }}
+        {{ formulario.nome.label_tag }}
+        {{ formulario.nome }}
+        {{ formulario.sobrenome.label_tag }}
+        {{ formulario.sobrenome }}
+        {{ formulario.email.label_tag }}
+        {{ formulario.email }}
+      
+        <div class = "formulario senha">
+          {{ formulario.password1.label_tag }}
+          {{ formulario.password1 }}
+        
+        <i class="far fa-eye mostra-senha" id="mostra-senha" style="cursor:pointer;"></i>
+        
+          {{ formulario.password2.label_tag }}
+          {{ formulario.password2 }}
+        
+        </div>
+        <button type="submit">Criar conta</button>
+    </div>
+  </form>
+  <script>
+    document.getElementById('mostra-senha').addEventListener('click',function(){
+
+      let camposSenha = document.querySelectorAll('.formulario.senha input[type="password"],.formulario.senha input[type="text"]');
+      let icone = document.getElementById('mostra-senha');
+     
+      camposSenha.forEach(function(field){
+        if(field.type === 'password'){
+          field.type = 'text';
+          icone.classList.remove('fa-eye');
+          icone.classList.add('fa-eye-slash');
+        }
+        else if (field.type === 'text' && !this.checked){
+          field.type = 'password';
+          icone.classList.remove('fa-eye-slash');
+          icone.classList.add('fa-eye');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
