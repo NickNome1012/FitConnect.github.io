@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,400;1,400&display=swap');
+
+
+body {
+    font-family: 'Radio Canada', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.navbar {
+  background: white;
+  opacity:1;
+  margin-top:-5px;
+}
+
+.logo {
+  color: #f06c00;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: 0.1s;
+  font-size: 24px; 
+  margin-top:-3px;
+  width:190px;
+  height:40px;
+  margin-top:8px;
+  margin-left:25px;
+}
+
+h1, h2 {
+    color: #ff6f00;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.7em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.membros {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.membros .membro {
+    position: relative;
+    width: 17.1%;
+    padding-top:3%; 
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.membros .membro img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.membros .membro:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.membros .membro:hover img {
+    opacity: 0.05;
+}
+
+.membros .membro h3, .membros .membro p {
+    top: 50%;
+    left: 50%;
+    color: black;
+    text-align: center;
+    vertical-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.membros .membro:hover h3, .membros .membro:hover p {
+    opacity: 1;
+}
+
+#contato a {
+    color: #ff6f00;
+    text-decoration: none;
+}
+
+#contato a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e64a19;
+    margin: 10px 0;
+}
